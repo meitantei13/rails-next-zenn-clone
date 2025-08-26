@@ -17,7 +17,7 @@ services:
       dockerfile: Dockerfile
     command: bash -c "touch log/development.log && tail -f log/development.log"
     volumes:
-      - ./rails:/myapp
+      - ./rails:/rails
     ports:
       - 3000:3000
     depends_on:
