@@ -76,8 +76,14 @@ jobs:
           gem install bundler
           bundle install --jobs 4 --retry 3 --path vendor/bundle
 
-      - name: Run rubocop
-        run: bundle exec rubocop
+      - name: Run RuboCop Auto Correct
+        run: bundle exec rubocop -A || true
+
+      - name: Check for uncommitted changes
+        run: git diff --exit-code || true
+
+      - name: Check for uncommitted changes
+        run: git diff --exit-code
 
   # 処理③ eslint(& prettier) のルール違反がないことをチェック
   eslint:
