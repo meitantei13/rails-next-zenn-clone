@@ -1,8 +1,9 @@
-# 自動生成されるものはチェック対象から除外する
 AllCops:
+  TargetRubyVersion: 3.1.2
+  NewCops: enable
   Exclude:
-    - "node_modules/**/*" # rubocop config/default.yml
-    - "vendor/**/*" # rubocop config/default.yml
+    - "node_modules/**/*"
+    - "vendor/**/*"
     - "db/schema.rb"
     - "db/migrate/*"
     - "bin/**"
@@ -41,8 +42,12 @@ Layout/SpaceInsideBlockBraces:
 Layout/SpaceAroundMethodCallOperator:
   Enabled: true
 
-#################### Lint ##################################
+Layout/LineLength:
+  Max: 160
+  Exclude:
+    - "db/migrate/*.rb"
 
+#################### Lint ##################################
 Lint/AmbiguousBlockAssociation:
   Exclude:
     - "spec/**/*_spec.rb"
@@ -77,11 +82,6 @@ Lint/RaiseException:
 Lint/StructNewOverride:
   Enabled: true
 
-Layout/LineLength:
-  Max: 160
-  Exclude:
-    - "db/migrate/*.rb"
-
 #################### Metrics ###############################
 Metrics/AbcSize:
   Max: 30
@@ -111,8 +111,7 @@ Metrics/PerceivedComplexity:
   Max: 8
 
 #################### Naming ################################
-
-Naming/PredicatePrefix:
+Naming/PredicatePrefix: # 旧: Naming/PredicateName
   ForbiddenPrefixes:
     - "is_"
     - "have_"
@@ -150,9 +149,6 @@ Style/BlockDelimiters:
   AutoCorrect: false
   Exclude:
     - "spec/**/*_spec.rb"
-
-Style/CaseLikeIf:
-  Enabled: false
 
 Style/ClassAndModuleChildren:
   Enabled: false
