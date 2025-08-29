@@ -1,5 +1,9 @@
 FROM ruby:3.1.2
-RUN apt-get update -qq && apt-get install -y vim
+RUN apt-get update -qq && apt-get install -y \
+    vim \
+    default-libmysqlclient-dev \
+    build-essential
+
 
 RUN mkdir /myapp
 WORKDIR /myapp
@@ -7,7 +11,7 @@ COPY Gemfile /myapp/Gemfile
 COPY Gemfile.lock /myapp/Gemfile.lock
 
 RUN gem update --system
-RUN bundle update --bundler
+RUN gem install bundler -v 2.3.7
 
 RUN bundle install
 COPY . /myapp
