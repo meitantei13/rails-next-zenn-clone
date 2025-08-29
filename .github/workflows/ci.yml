@@ -77,16 +77,10 @@ jobs:
           bundle install --jobs 4 --retry 3 --path vendor/bundle
 
       - name: Run RuboCop Auto Correct
-        run: bundle exec rubocop -A || true
+        run: bundle exec rubocop -A
 
-      #- name: Check for uncommitted changes
-       # run: git diff --exit-code || true
-
-      - name: Run RuboCop to check
-        run: bundle exec rubocop
-
-      #- name: Check for uncommitted changes
-        #run: git diff --exit-code
+      - name: Check for uncommitted changes
+        run: git diff --exit-code
 
   # 処理③ eslint(& prettier) のルール違反がないことをチェック
   eslint:
