@@ -111,7 +111,7 @@ Metrics/PerceivedComplexity:
   Max: 8
 
 #################### Naming ################################
-Naming/PredicatePrefix: # 旧: Naming/PredicateName
+Naming/PredicatePrefix:
   ForbiddenPrefixes:
     - "is_"
     - "have_"
