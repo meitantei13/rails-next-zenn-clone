@@ -2,7 +2,7 @@ plugins:
   - rubocop-rspec
 
 AllCops:
-  Exclude:ß
+  Exclude:
     - "spec/rails_helper.rb"
     - "spec/spec_helper.rb"
 
