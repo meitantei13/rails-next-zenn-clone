@@ -22,3 +22,7 @@ AllCops:
 # Deprecated Cop の置き換え
 Naming/PredicatePrefix:
   Enabled: true
+
+# 日本語でも context 警告をださない
+RSpec/ContextWording:
+  Enabled: false
