@@ -26,3 +26,7 @@ Naming/PredicatePrefix:
 # 日本語でも context 警告をださない
 RSpec/ContextWording:
   Enabled: false
+
+# ExampleLength の許容量を増やす
+RSpec/ExampleLength:
+  Max: 10
