@@ -11,7 +11,7 @@ COPY Gemfile.lock /myapp/Gemfile.lock
 
 # Deal with Bundler bugs
 RUN gem update --system
-RUN bundle update --bundler
+RUN gem install bundler -v 2.3.7
 
 RUN bundle install
 
